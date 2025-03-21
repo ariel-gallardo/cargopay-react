@@ -21,7 +21,7 @@ export default () => {
     },[openMenu, isMobile])
 
     return (
-        <AppBar position="sticky" className="h-full">
+        <AppBar position="sticky">
             <Toolbar variant="regular" className="h-full bg-black">
                 <Grid2 container columns={12} className="w-full">
                     <Grid2 size={2}>

@@ -9,6 +9,8 @@ import { Grid2 } from "@mui/material";
 import NavBar from "@components/NavBar";
 import { AppProvider } from "@/context/AppContext";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
+import Main from "@/components/Main";
 
 export default function RootLayout({
   children,
@@ -24,20 +26,20 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico" />
-      <body>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      </head>
+      <body className="min-h-screen flex flex-col">
         {
           load ?
           <AppProvider>
-          <CssBaseline>
-            <Grid2 container columns={16} height={'100vh'}>
-              <Grid2 size={16}>
-                <NavBar/>
-              </Grid2>
-              <Grid2 size={16} height={'80vh'} className="bg-blue-200">{children}</Grid2>
-              <Grid2 size={16}></Grid2>
-            </Grid2>
-            </CssBaseline>
+          <CssBaseline/>
+          <NavBar/>
+              <Main>
+                {children}
+              </Main>
+          <Footer/>
           </AppProvider>
           : <></>
         }
