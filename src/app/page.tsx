@@ -80,7 +80,7 @@ export default function Home() {
         <Typography className="text-center" variant="h3">Lo que dicen nuestros usuarios</Typography>
         <Box className="w-full md:w-[500px]">
           <Carousel>
-            {opinions.map(x => <Opinion {...x}></Opinion>)}
+            {opinions.map((x,i) => <Opinion key={i} {...x}></Opinion>)}
           </Carousel>
         </Box>
       </Grid2>
