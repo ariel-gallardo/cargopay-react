@@ -5,7 +5,8 @@
     "types": [
       "@emotion/react",
       "@emotion/styled",
-      "@mui/material"
+      "@mui/material",
+      "@toolpad/core"
     ],
     "allowJs": true,
     "skipLibCheck": true,
