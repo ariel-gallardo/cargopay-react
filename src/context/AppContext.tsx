@@ -1,6 +1,8 @@
 'use client';
 import { useMediaQuery, useTheme } from '@mui/material';
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { NextAppProvider } from '@toolpad/core/nextjs';
+import Navigation from '@context/Navigation';
 
 interface AppContextType {
   isDesktop: boolean;
@@ -22,7 +24,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <AppContext.Provider value={{isDesktop, isMobile:!isDesktop, isLogged, setLogged }}>
-      {children}
+      <NextAppProvider navigation={Navigation}>{children}</NextAppProvider>
     </AppContext.Provider>
   );
 };

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { SignInPage, type AuthProvider } from '@toolpad/core/SignInPage';
 import { useTheme } from '@mui/material/styles';
+import { PageContainer } from '@toolpad/core';
 
 const providers = [{ id: 'credentials', name: 'Email and Password' }];
 
@@ -24,12 +25,12 @@ const signIn: (provider: AuthProvider, formData: FormData) => void = async (
 export default function CredentialsSignInPage() {
   const theme = useTheme();
   return (
-    <AppProvider theme={theme}>
+    <PageContainer>
       <SignInPage
         signIn={signIn}
         providers={providers}
         slotProps={{ emailField: { autoFocus: false }, form: { noValidate: true } }}
       />
-    </AppProvider>
+      </PageContainer>
   );
 }
