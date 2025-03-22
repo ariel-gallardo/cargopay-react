@@ -1,0 +1,67 @@
+[
+    {
+      "name": "JE",
+      "description": "Uso Cargopay para darle tarjetas a mis hijos, y controlo todo desde mi app. Es súper práctico.",
+      "rate": 5
+    },
+    {
+      "name": "LN",
+      "description": "La plataforma es buena, pero a veces no sincroniza bien con los sistemas externos. Eso genera confusión.",
+      "rate": 4
+    },
+    {
+      "name": "MG",
+      "description": "Cargopay nos facilitó muchísimo la gestión de gastos. Todo queda bien registrado y es muy fácil de usar.",
+      "rate": 5
+    },
+    {
+      "name": "SG",
+      "description": "El proceso de validación de gastos es lento. He tenido problemas con algunos reembolsos que no se procesan correctamente.",
+      "rate": 3
+    },
+    {
+      "name": "DR",
+      "description": "Nos sorprendió lo intuitiva que es la plataforma. Cargopay se adaptó perfecto a nuestra dinámica de trabajo.",
+      "rate": 5
+    },
+    {
+      "name": "JP",
+      "description": "En general es buena, aunque algunas veces los límites de los gastos no son claros y hay confusión con las restricciones.",
+      "rate": 4
+    },
+    {
+      "name": "VC",
+      "description": "Con Cargopay tenemos control total sobre los gastos del equipo. Todo está digitalizado y al alcance.",
+      "rate": 5
+    },
+    {
+      "name": "MT",
+      "description": "La interfaz es confusa y no es fácil encontrar lo que busco. A veces se demora en cargar los datos.",
+      "rate": 2
+    },
+    {
+      "name": "EP",
+      "description": "Me encanta lo práctico que es cargar los comprobantes y rendir gastos. Cargopay nos ahorra muchísimo tiempo.",
+      "rate": 5
+    },
+    {
+      "name": "CT",
+      "description": "El sistema de carga de comprobantes podría ser más ágil, ya que en ocasiones se traba y debo recargar la página.",
+      "rate": 4
+    },
+    {
+      "name": "LA",
+      "description": "Antes era un lío organizar los viáticos, ahora con Cargopay todo es más ágil y ordenado.",
+      "rate": 5
+    },
+    {
+      "name": "RA",
+      "description": "El soporte al cliente no es tan rápido. Tardaron mucho en responder mi consulta y el problema no se solucionó al 100%.",
+      "rate": 2
+    },
+    {
+      "name": "HL",
+      "description": "En la empresa usamos Cargopay para viáticos y gastos de empleados. Es simple, rápido y transparente.",
+      "rate": 5
+    }
+]  
