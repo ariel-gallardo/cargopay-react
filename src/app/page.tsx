@@ -38,7 +38,7 @@ export default function Home() {
         <Typography variant="h4" textAlign={"center"}>
           Tu dinero, tu control. La forma más simple de manejar tus tarjetas prepagas.
         </Typography>
-        <Button>Abrí tu cuenta</Button>
+        <Button variant="contained">Abrí tu cuenta</Button>
       </Grid2>
 
       <Grid2 size={{md: 6, xs:12}} className="justify-items-end">
@@ -80,18 +80,18 @@ export default function Home() {
         <Typography className="text-center" variant="h3">Lo que dicen nuestros usuarios</Typography>
         <Box className="w-full md:w-[500px]">
           <Carousel>
-            {opinions.map(x => <Opinion {...x}></Opinion>)}
+            {opinions.map((x,i) => <Opinion key={i} {...x}></Opinion>)}
           </Carousel>
         </Box>
       </Grid2>
 
       <Grid2 size={12} className="justify-items-center">
         <Typography className="text-center" variant="h3">¿Querés empezar?</Typography>
-        <Typography>
+        <Typography className="py-5">
           Sumate hoy a la nueva forma de manejar tu dinero. Creá tu cuenta en
-          minutos y descubrí todo lo que Cargopay puede ofrecerte.
+          minutos y descubrí todo lo que <b>Cargopay</b> puede ofrecerte.
         </Typography>
-        <Button>Crear cuenta ahora</Button>
+        <Button variant="contained">Crear cuenta ahora</Button>
       </Grid2>
     </Grid2>
   );

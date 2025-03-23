@@ -22,31 +22,31 @@ export default () => {
 
     return (
         <AppBar position="sticky">
-            <Toolbar variant="regular" className="h-full bg-black">
+            <Toolbar variant="regular" className="h-full">
                 <Grid2 container columns={12} className="w-full">
                     <Grid2 size={2}>
                         <img src="/images/cargopay.svg" className="w-20" />
                     </Grid2>
                     <Grid2 size={10} className="flex justify-end gap-1">
                             <AuthComponent isAuth={true}>
-                                <IconButton sx={{display: {xs: 'none',  lg:'block'}}}>
-                                    <Avatar/>
+                                <IconButton color="secondary" sx={{display: {xs: 'none',  lg:'block'}}}>
+                                    <Avatar color="secondary"/>
                                 </IconButton>
                             </AuthComponent>
                             <AuthComponent isAuth={false}>
                                 <Box sx={{display: {xs: 'none', lg:'flex'}}}>
-                                    <Button className="gap-1">
-                                        <LoginIcon className="text-green-400"/>
-                                        <Typography className="text-green-300 border-b-2">Login</Typography>
+                                    <Button className="gap-1" color="secondary">
+                                        <LoginIcon/>
+                                        <Typography color="secondary" className="border-b-2">Login</Typography>
                                     </Button>
-                                    <Button className="gap-1">
-                                        <PersonAddIcon className="text-green-400"/>
-                                        <Typography className="text-green-300 border-b-2">Register</Typography>
+                                    <Button className="gap-1" color="secondary">
+                                        <PersonAddIcon/>
+                                        <Typography color="secondary" className="border-b-2">Register</Typography>
                                     </Button>
                                 </Box>
                             </AuthComponent>
-                            <Button onClick={toggleMenu} sx={{display: {xs: 'block', lg:'none'}}}>
-                                    <MenuIcon className="text-green-400"/>
+                            <Button color="secondary" onClick={toggleMenu} sx={{display: {xs: 'block', lg:'none'}}}>
+                                    <MenuIcon/>
                             </Button>
                             <Box sx={{display: {xs: 'block', lg:'none'}}}>
                             <Drawer open={openMenu} onClose={toggleMenu} sx={
@@ -60,25 +60,25 @@ export default () => {
                                             }
                                         }>
                                         <AuthComponent>
-                                            <IconButton>
-                                                    <Avatar/>
+                                            <IconButton color="secondary">
+                                                    <Avatar color="secondary"/>
                                             </IconButton>
                                         </AuthComponent>
                                         <AuthComponent isAuth={false}>
                                             <Box>
-                                                <Button className="w-full">
-                                                    <LoginIcon className="text-green-400"/>
-                                                    <Typography className="text-green-300 border-b-2">Login</Typography>
+                                                <Button className="w-full" color="secondary">
+                                                    <LoginIcon/>
+                                                    <Typography color="secondary" className="border-b-2">Login</Typography>
                                                 </Button>
-                                                <Button className="w-full" size="large">
-                                                    <PersonAddIcon className="text-green-400"/>
-                                                    <Typography className="text-green-300 border-b-2">Register</Typography>
+                                                <Button color="secondary" className="w-full" size="large">
+                                                    <PersonAddIcon/>
+                                                    <Typography color="secondary" className="border-b-2">Register</Typography>
                                                 </Button>
                                             </Box>
                                         </AuthComponent>
-                                        <Button onClick={toggleMenu}>
-                                                <CloseIcon className="text-red-400"/>
-                                                <Typography className="text-red-300 border-b-2">Close</Typography>
+                                        <Button onClick={toggleMenu} color="secondary">
+                                                <CloseIcon className="text-red-700"/>
+                                                <Typography color="error" className=" border-b-2">Close</Typography>
                                         </Button>
                                     </Drawer>
                             </Box>

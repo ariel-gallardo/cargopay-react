@@ -10,7 +10,7 @@ const Opinion : React.FC<OpinionType> = (data: OpinionType) => {
                 <Avatar className="m-auto">{data.name}</Avatar>
                 <Rating defaultValue={data.rate}/>
             </Box>
-            <Typography className="m-auto">{data.description}</Typography>
+            <Typography color="secondary" className="m-auto">{data.description}</Typography>
             </Stack>
         </Paper>
     );

@@ -1,6 +1,9 @@
 'use client';
 import { useMediaQuery, useTheme } from '@mui/material';
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { NextAppProvider } from '@toolpad/core/nextjs';
+import Navigation from '@context/Navigation';
+import Theme from '@context/theme/Theme';
 
 interface AppContextType {
   isDesktop: boolean;
@@ -13,8 +16,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
   const [isLogged, setLogged] = useState<boolean>(false);
-  const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const isDesktop = useMediaQuery(Theme.breakpoints.up("md"));
 
   useEffect(() => {
 
@@ -22,7 +24,7 @@ export const AppProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <AppContext.Provider value={{isDesktop, isMobile:!isDesktop, isLogged, setLogged }}>
-      {children}
+      <NextAppProvider navigation={Navigation} theme={Theme}>{children}</NextAppProvider>
     </AppContext.Provider>
   );
 };
