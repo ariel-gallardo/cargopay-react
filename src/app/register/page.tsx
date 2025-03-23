@@ -1,11 +1,13 @@
-import { Card, Container, FormControl, FormLabel, Stack, TextField } from "@mui/material";
+import { Button, Card, Container, FormControl, FormLabel, Stack, TextField, Typography } from "@mui/material";
 import { PageContainer } from "@toolpad/core";
 
 export default () => {
 
     return (
         <PageContainer>
-                <Card variant="elevation" className="p-10 w-[20vw]" >
+            <Stack alignItems={'center'}>
+            <Card elevation={5} variant="elevation" className="p-5 w-[80vw] lg:p-10 lg:w-[20vw]" >
+                    <Typography textAlign={'center'} variant="h5">Crear Cuenta</Typography>
                     <Stack gap={2}>
                         <FormControl>
                             <FormLabel>Correo</FormLabel>
@@ -13,14 +15,16 @@ export default () => {
                         </FormControl>
                         <FormControl>
                             <FormLabel>Password</FormLabel>
-                            <TextField placeholder="client@cargopay.com"></TextField>
+                            <TextField type="password" placeholder="********"></TextField>
                         </FormControl>
                         <FormControl>
                             <FormLabel>Re-Password</FormLabel>
-                            <TextField placeholder="client@cargopay.com"></TextField>
+                            <TextField type="password" placeholder="********"></TextField>
                         </FormControl>
+                        <Button variant="contained">Crear Cuenta</Button>
                     </Stack>
                 </Card>
+            </Stack>
         </PageContainer>
     );
 }
