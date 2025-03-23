@@ -23,7 +23,6 @@ const signIn: (provider: AuthProvider, formData: FormData) => void = async (
 };
 
 export default function CredentialsSignInPage() {
-  const theme = useTheme();
   return (
     <PageContainer>
       <SignInPage
