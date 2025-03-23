@@ -13,11 +13,17 @@ import { useEffect, useState } from "react";
 import OpinionType from "@/models/OpinionType";
 import Carousel from "@/components/Carousel";
 import Opinion from "@/components/Opinion";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
 
   const [firstLoad, setFirstLoad] = useState(true);
   const [opinions, setOpinions] = useState<OpinionType[]>([])
+  const router = useRouter();
+
+  const goToRegisterSite = () =>{
+    router.push('/register');
+  }
 
   useEffect(() => {
     if(firstLoad){
@@ -38,7 +44,7 @@ export default function Home() {
         <Typography variant="h4" textAlign={"center"}>
           Tu dinero, tu control. La forma más simple de manejar tus tarjetas prepagas.
         </Typography>
-        <Button variant="contained">Abrí tu cuenta</Button>
+        <Button variant="contained" onClick={goToRegisterSite}>Abrí tu cuenta</Button>
       </Grid2>
 
       <Grid2 size={{md: 6, xs:12}} className="justify-items-end">
@@ -91,7 +97,7 @@ export default function Home() {
           Sumate hoy a la nueva forma de manejar tu dinero. Creá tu cuenta en
           minutos y descubrí todo lo que <b>Cargopay</b> puede ofrecerte.
         </Typography>
-        <Button variant="contained">Crear cuenta ahora</Button>
+        <Button variant="contained" onClick={goToRegisterSite}>Crear cuenta ahora</Button>
       </Grid2>
     </Grid2>
   );
