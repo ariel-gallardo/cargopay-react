@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "@/context/AppContext";
 import AuthComponent from "./AuthComponent";
 import CloseIcon from '@mui/icons-material/Close';
+import { useRouter } from "next/navigation";
 
 export default () => {
 
@@ -15,6 +16,23 @@ export default () => {
          setOpenMenu(!openMenu)
     };
     const {isMobile} = useAppContext();
+    const router = useRouter();
+
+    const goToRegisterSite = () =>{
+        router.push('/register');
+    }
+
+    const goToLoginSite = () =>{
+        router.push('/login');
+    }
+
+    const goToProfileSite = () =>{
+        router.push('/profile');
+    }
+
+    const goToHomeSite = () =>{
+        router.push('/');
+    }
 
     useEffect(() => {
         
@@ -25,21 +43,21 @@ export default () => {
             <Toolbar variant="regular" className="h-full">
                 <Grid2 container columns={12} className="w-full">
                     <Grid2 size={2}>
-                        <img src="/images/cargopay.svg" className="w-20" />
+                        <img src="/images/cargopay.svg" className="w-20" onClick={goToHomeSite} />
                     </Grid2>
                     <Grid2 size={10} className="flex justify-end gap-1">
                             <AuthComponent isAuth={true}>
-                                <IconButton color="secondary" sx={{display: {xs: 'none',  lg:'block'}}}>
+                                <IconButton onClick={goToProfileSite} color="secondary" sx={{display: {xs: 'none',  lg:'block'}}}>
                                     <Avatar color="secondary"/>
                                 </IconButton>
                             </AuthComponent>
                             <AuthComponent isAuth={false}>
                                 <Box sx={{display: {xs: 'none', lg:'flex'}}}>
-                                    <Button className="gap-1" color="secondary">
+                                    <Button className="gap-1" color="secondary" onClick={goToLoginSite}>
                                         <LoginIcon/>
                                         <Typography color="secondary" className="border-b-2">Login</Typography>
                                     </Button>
-                                    <Button className="gap-1" color="secondary">
+                                    <Button className="gap-1" color="secondary" onClick={goToRegisterSite}>
                                         <PersonAddIcon/>
                                         <Typography color="secondary" className="border-b-2">Register</Typography>
                                     </Button>
@@ -60,17 +78,17 @@ export default () => {
                                             }
                                         }>
                                         <AuthComponent>
-                                            <IconButton color="secondary">
+                                            <IconButton color="secondary" onClick={goToProfileSite}>
                                                     <Avatar color="secondary"/>
                                             </IconButton>
                                         </AuthComponent>
                                         <AuthComponent isAuth={false}>
                                             <Box>
-                                                <Button className="w-full" color="secondary">
+                                                <Button className="w-full" color="secondary" onClick={goToLoginSite}>
                                                     <LoginIcon/>
                                                     <Typography color="secondary" className="border-b-2">Login</Typography>
                                                 </Button>
-                                                <Button color="secondary" className="w-full" size="large">
+                                                <Button color="secondary" className="w-full" size="large" onClick={goToRegisterSite}>
                                                     <PersonAddIcon/>
                                                     <Typography color="secondary" className="border-b-2">Register</Typography>
                                                 </Button>
