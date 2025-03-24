@@ -30,6 +30,7 @@
       "@context/*": ["./src/context/*"],
       "@models/*": ["./src/models/*"],
       "@json/*": ["./src/json/*"],
+      "@routes/*": ["./src/context/routes/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.json"],
