@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 
 export default () => {
 
-    const [openMenu, setOpenMenu] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false);
     const toggleMenu = () => {
          setOpenMenu(!openMenu)
     };
@@ -39,7 +39,7 @@ export default () => {
     },[openMenu, isMobile])
 
     return (
-        <AppBar position="sticky">
+        <AppBar position="sticky" sx={{zIndex: (theme) => theme.zIndex.drawer +2}}>
             <Toolbar variant="regular" className="h-full">
                 <Grid2 container columns={12} className="w-full">
                     <Grid2 size={2}>
