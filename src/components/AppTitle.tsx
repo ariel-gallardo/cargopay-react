@@ -1,7 +1,9 @@
 import { Typography } from "@mui/material";
 
-export default () => {
+const AppTitleComponent = () => {
     return (
         <Typography fontFamily={"Boldonse"} fontSize={'2rem'}>CargoPay</Typography>
     );
 }
+
+export default AppTitleComponent;

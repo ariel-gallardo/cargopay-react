@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "ESLint Workspace",
+			"type": "shell",
+			"command": "npx eslint src --ext .js,.ts,.jsx,.tsx",
+			"problemMatcher": ["$eslint-stylish"]
+		}
+	]
+}

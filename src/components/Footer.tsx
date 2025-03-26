@@ -1,7 +1,7 @@
 import { Stack } from "@mui/material";
 import Image from "next/image";
 
-export default () => {
+const FooterComponent = () => {
   const year = new Date().getFullYear();
 
   return (
@@ -19,3 +19,5 @@ export default () => {
     </footer>
   );
 };
+
+export default FooterComponent;

@@ -1,5 +1,5 @@
 'use client';
-import { AppBar, Avatar, Grid2, Toolbar, Box, IconButton, Button, Typography, Menu, Drawer } from "@mui/material";
+import { AppBar, Avatar, Grid2, Toolbar, Box, IconButton, Button, Typography, Drawer } from "@mui/material";
 import LoginIcon from '@mui/icons-material/Login';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -8,8 +8,9 @@ import { useAppContext } from "@/context/AppContext";
 import AuthComponent from "./AuthComponent";
 import CloseIcon from '@mui/icons-material/Close';
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-export default () => {
+const NavBarComponent = () => {
 
     const [openMenu, setOpenMenu] = useState(false);
     const toggleMenu = () => {
@@ -43,7 +44,7 @@ export default () => {
             <Toolbar variant="regular" className="h-full">
                 <Grid2 container columns={12} className="w-full">
                     <Grid2 size={2}>
-                        <img src="/images/cargopay.svg" className="w-20" onClick={goToHomeSite} />
+                        <Image alt="CargoPay Logo" src={"/images/cargopay.svg"} className="w-20" onClick={goToHomeSite} width={100} height={100} />
                     </Grid2>
                     <Grid2 size={10} className="flex justify-end gap-1">
                             <AuthComponent isAuth={true}>
@@ -106,3 +107,5 @@ export default () => {
         </AppBar>
     );
 }
+
+export default NavBarComponent;

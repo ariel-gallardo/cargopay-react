@@ -7,7 +7,7 @@ export interface ColumnData {
     isEditing?: boolean;
 }
 
-export default (
+const Columns = (
     handleChange: (id: GridRowId, value: string) => void, 
     handleSave: (id: GridRowId, balance: number) => void, 
     handleEdit: (id: GridRowId) => void, 
@@ -62,3 +62,5 @@ export default (
     ];
     return rows;
 }
+
+export default Columns;

@@ -1,7 +1,7 @@
-import { Box, Button, Card, FormControl, FormLabel, Stack, TextField, Typography } from "@mui/material";
+import { Button, Card, FormControl, FormLabel, Stack, TextField, Typography } from "@mui/material";
 import { PageContainer } from "@toolpad/core";
 
-export default () => {
+const ProfileView = () => {
     return (
         <PageContainer className="w-full">
             <Stack alignItems={'center'} className="w-full">
@@ -23,3 +23,5 @@ export default () => {
         </PageContainer>
     );
 }
+
+export default ProfileView;

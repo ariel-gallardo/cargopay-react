@@ -30,7 +30,7 @@ export default function Home() {
       setOpinions(OpinionJson.map((x: OpinionType) => x))
       setFirstLoad(false);
     }
-  },[])
+  },[firstLoad])
 
   return (
     <Grid2 container className="text-white my-5" rowGap={2} columnSpacing={5}>

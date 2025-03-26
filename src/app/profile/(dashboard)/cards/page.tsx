@@ -2,11 +2,11 @@
 
 import { PageContainer } from "@toolpad/core";
 import { useState } from "react";
-import { DataGrid, GridColDef, GridPaginationModel, GridRowId } from "@mui/x-data-grid";
+import { DataGrid, GridPaginationModel, GridRowId } from "@mui/x-data-grid";
 import { ColumnData } from "./Columns";
 import Columns from "./Columns";
 
-export default () => {
+const CardsView = () => {
   const [rows, setRows] = useState<ColumnData[]>(
     Array.from({ length: 30 }, (_, index) => ({
       id: Number(String(Date.now()) + String(index).padStart(3, "0")),
@@ -63,3 +63,5 @@ export default () => {
     </PageContainer>
   );
 };
+
+export default CardsView;
