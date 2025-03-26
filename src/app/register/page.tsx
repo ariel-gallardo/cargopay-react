@@ -1,7 +1,7 @@
-import { Button, Card, Container, FormControl, FormLabel, Stack, TextField, Typography } from "@mui/material";
+import { Button, Card, FormControl, FormLabel, Stack, TextField, Typography } from "@mui/material";
 import { PageContainer } from "@toolpad/core";
 
-export default () => {
+const RegisterView = () => {
 
     return (
         <PageContainer>
@@ -28,3 +28,5 @@ export default () => {
         </PageContainer>
     );
 }
+
+export default RegisterView;

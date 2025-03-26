@@ -17,7 +17,7 @@ const Carousel: React.FC<Props> = ({ children, time = 3000 } : Props) => {
     }, time);
 
     return () => clearInterval(interval);
-  }, [totalSlides]);
+  }, [totalSlides, time]);
 
   useEffect(() => {
     if (carouselRef.current) {

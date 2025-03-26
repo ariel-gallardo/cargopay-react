@@ -4,7 +4,7 @@ import { ReactNode, useEffect } from "react";
 
 class Props {
   children: ReactNode;
-  isAuth?: Boolean = true;
+  isAuth?: boolean = true;
 }
 
 const AuthComponent: React.FC<Props> = ({ children, isAuth = true }) => {

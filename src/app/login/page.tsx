@@ -1,8 +1,6 @@
 'use client';
 import * as React from 'react';
-import { AppProvider } from '@toolpad/core/AppProvider';
 import { SignInPage, type AuthProvider } from '@toolpad/core/SignInPage';
-import { useTheme } from '@mui/material/styles';
 import { PageContainer } from '@toolpad/core';
 
 const providers = [{ id: 'credentials', name: 'Email and Password' }];
