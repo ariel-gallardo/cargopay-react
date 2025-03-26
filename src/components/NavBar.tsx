@@ -44,7 +44,7 @@ const NavBarComponent = () => {
             <Toolbar variant="regular" className="h-full">
                 <Grid2 container columns={12} className="w-full">
                     <Grid2 size={2}>
-                        <Image alt="CargoPay Logo" src={"/images/cargopay.svg"} className="w-20" onClick={goToHomeSite} width={100} height={100} />
+                        <Image alt="CargoPay Logo" src={"/images/CargoPay.svg"} className="w-20" onClick={goToHomeSite} width={100} height={100} />
                     </Grid2>
                     <Grid2 size={10} className="flex justify-end gap-1">
                             <AuthComponent isAuth={true}>
