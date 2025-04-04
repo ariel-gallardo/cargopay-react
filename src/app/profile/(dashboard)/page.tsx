@@ -1,7 +1,14 @@
+'use client'
 import { Button, Card, FormControl, FormLabel, Stack, TextField, Typography } from "@mui/material";
 import { PageContainer } from "@toolpad/core";
+import { signOut } from "next-auth/react";
 
 const ProfileView = () => {
+
+    const logout = () =>{
+        signOut();
+    }
+
     return (
         <PageContainer className="w-full">
             <Stack alignItems={'center'} className="w-full">
@@ -17,6 +24,7 @@ const ProfileView = () => {
                             <TextField type="password" placeholder="********"></TextField>
                         </FormControl>
                         <Button variant="contained">Guardar cambios</Button>
+                        <Button onClick={logout} variant="contained" className="!bg-red-600">Cerrar Sesion</Button>
                     </Stack>
                 </Card>
             </Stack>

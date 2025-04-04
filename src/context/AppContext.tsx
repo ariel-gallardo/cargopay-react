@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, ReactNode, useEffect } from
 import { NextAppProvider } from '@toolpad/core/nextjs';
 import Navigation from '@context/Navigation';
 import Theme from '@context/theme/Theme';
+import { useSession } from 'next-auth/react';
 
 interface AppContextType {
   isDesktop: boolean;
@@ -16,12 +17,13 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const [isLogged, setLogged] = useState<boolean>(true);
+  const { data: session } = useSession();
+  const [isLogged, setLogged] = useState<boolean>(!!session?.user);
   const isDesktop = useMediaQuery(Theme.breakpoints.up("md"));
 
   useEffect(() => {
-
-  }, [isDesktop])
+    if (!!session?.user != isLogged) setLogged(!!session?.user);
+  }, [isDesktop, session])
 
   return (
     <AppContext.Provider value={{isDesktop, isMobile:!isDesktop, isLogged, setLogged, theme: Theme }}>

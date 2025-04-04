@@ -1,32 +1,16 @@
 'use client';
 import * as React from 'react';
-import { SignInPage, type AuthProvider } from '@toolpad/core/SignInPage';
+import { SignInPage} from '@toolpad/core/SignInPage';
 import { PageContainer } from '@toolpad/core';
-
+import SignIn from './SignIn';
 const providers = [{ id: 'credentials', name: 'Email and Password' }];
-
-const signIn: (provider: AuthProvider, formData: FormData) => void = async (
-  provider,
-  formData,
-) => {
-  const promise = new Promise<void>((resolve) => {
-    setTimeout(() => {
-      alert(
-        `Signing in with "${provider.name}" and credentials: ${formData.get('email')}, ${formData.get('password')}`,
-      );
-      resolve();
-    }, 300);
-  });
-  return promise;
-};
 
 export default function CredentialsSignInPage() {
   return (
     <PageContainer>
       <SignInPage
-        signIn={signIn}
+        signIn={SignIn}
         providers={providers}
-        slotProps={{ emailField: { autoFocus: false }, form: { noValidate: true } }}
       />
       </PageContainer>
   );

@@ -10,6 +10,7 @@ import { AppProvider } from "@/context/AppContext";
 import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import Main from "@/components/Main";
+import { SessionProvider } from "next-auth/react";
 
 
 export default function RootLayout({
@@ -34,6 +35,7 @@ export default function RootLayout({
         {!load ? (
           <></>
         ) : (
+            <SessionProvider>
             <AppProvider>
             <CssBaseline>
               <NavBar />
@@ -43,6 +45,7 @@ export default function RootLayout({
               <Footer />
             </CssBaseline>
             </AppProvider>
+            </SessionProvider>
         )}
       </body>
     </html>
