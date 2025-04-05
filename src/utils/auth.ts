@@ -1,9 +1,18 @@
-import NextAuth from "next-auth";
+import NextAuth, { CredentialsSignin } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import UserLogin from "@models/User/UserLogin";
 import UserInfo from "@models/User/UserInfo";
 import CustomResponse from "@models/CustomResponse";
 import { cookies } from 'next/headers';
+
+class AuthenticationError extends CredentialsSignin{
+    constructor(message: string) {
+        super();
+        this.message = message;
+        this.code = 'AuthInvalidCredentials';
+    }
+    override stack?: '';
+}
 
 const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
@@ -46,7 +55,10 @@ const { handlers, signIn, signOut, auth } = NextAuth({
                 
                 
                 const user = await req?.json() as CustomResponse<UserInfo>; 
-                if (!user?.data) throw new Error(user?.message ?? 'INVALID_CREDENTIALS');
+                console.log(user)
+                if (!user?.data){
+                    throw new AuthenticationError(user?.message ?? 'INVALID_CREDENTIALS');
+                }
                 else{
                     const authToken = req.headers.get('Authorization');
                     cookieStore.set('token',authToken as string);
@@ -56,12 +68,16 @@ const { handlers, signIn, signOut, auth } = NextAuth({
             },
         }),
     ],
-    pages: {
-        signIn: '/login',
-        signOut: '/',
-        newUser: '/login',
-        error: undefined,
-        verifyRequest: undefined
+    logger: {
+        error(code, ...message) {
+            //log.error(code, message)
+        },
+        warn(code, ...message) {
+            //log.warn(code, message)
+        },
+        debug(code, ...message) {
+            //log.debug(code, message)
+        }
     }
 });
 

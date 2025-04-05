@@ -5,6 +5,9 @@ import { NextAppProvider } from '@toolpad/core/nextjs';
 import Navigation from '@context/Navigation';
 import Theme from '@context/theme/Theme';
 import { useSession } from 'next-auth/react';
+import { Subject } from 'rxjs';
+import ErrorChannel from '@/models/Channel/ErrorChannelType';
+import SuccessChannel from '@/models/Channel/SuccessChannelType';
 
 interface AppContextType {
   isDesktop: boolean;
@@ -17,16 +20,16 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider = ({ children }: { children: ReactNode }) => {
-  const { data: session } = useSession();
+  const { data: session, status} = useSession();
   const [isLogged, setLogged] = useState<boolean>(!!session?.user);
   const isDesktop = useMediaQuery(Theme.breakpoints.up("md"));
 
   useEffect(() => {
     if (!!session?.user != isLogged) setLogged(!!session?.user);
-  }, [isDesktop, session])
+  }, [isDesktop, session, status])
 
   return (
-    <AppContext.Provider value={{isDesktop, isMobile:!isDesktop, isLogged, setLogged, theme: Theme }}>
+    <AppContext.Provider value={{ isDesktop, isMobile: !isDesktop, isLogged, setLogged, theme: Theme}}>
       <NextAppProvider navigation={Navigation} theme={Theme}>{children}</NextAppProvider>
     </AppContext.Provider>
   );
